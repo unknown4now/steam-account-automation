@@ -93,8 +93,13 @@ const loggedOn = async () => {
     user.removeAllListeners();
     user.logOff();
 
-    const steamIDs = id3s.map(id => id.replace(/\D/g, '')).join('\n');
-    fs.writeFileSync('friendcodes.txt', steamIDs);
+    const logins = accounts.map((account, index) => `login${index + 1}=${account.login}`).join('\n');
+    const passwords = accounts.map((account, index) => `password${index + 1}=${account.password}`).join('\n');
+    const steamids = accounts.map((account, index) => `steamid${index + 1}=${id3s[index]}`).join('\n');
+
+    const accountLines = `${logins}\n\n${passwords}\n\n${steamids}`;
+    fs.writeFileSync('accs.txt', accountLines);
+
     rl.close();
     return;
 };
