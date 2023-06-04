@@ -98,7 +98,7 @@ const loggedOn = async () => {
     const steamids = accounts.map((account, index) => `steamid${index + 1}=${id3s[index]}`).join('\n');
 
     const accountLines = `${logins}\n\n${passwords}\n\n${steamids}`;
-    fs.writeFileSync('accs.txt', accountLines);
+    fs.writeFileSync('info.txt', accountLines);
 
     rl.close();
     return;
