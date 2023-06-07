@@ -19,7 +19,7 @@ npm install readline fs steam-user steam-totp
 * In `accounts.txt` add your bot account details login:password format
 * Run `install.bat`
 * Run `start.bat` to start the script
-* In `friendscode.txt` gonna be your friend codes
+* In `info.txt` gonna be your friend codes
 * To change custom name you need to edit this line
  ```
 const str_name = (config.display_format ? config.display_format : "nn ▲ $id$").replace(/\$id\$/g, (idx + 1).toString());
